@@ -1,6 +1,5 @@
 #Initialize balance
 balance = 0.0
- 
 # Load balance and transaction log from files
 try:
     with open("Bank Data.txt", "r") as file:
@@ -10,14 +9,19 @@ except FileNotFoundError:
     pass
 except ValueError:
     print("Invalid data in the file. Starting with a balance of 0.0.")
- 
+
+print("###############################################\n \t Welcome to CI bank \n ##################################")
+name = input(f"Please enter your name:")
 #Main loop
 while True:
+    response = input(f"Hi {name}, would you like to make a transaction? (Yes/No):")
+    print(f'*******************************************************************\n \n \tCreative Innovators Bank \n \tCurrent balance : R{balance}\n*******************************************************************')
+    
     print(f'Current balance:{balance}')
-    response = input("Would you like to make a transaction? (Yes/No):")
+    
  
     if response.lower() == 'yes':
-        transaction_type = input("Would you like to make a deposit or withdrawal? (Deposit/Withdraw):")
+        transaction_type = input(f"Hi {name}, would you like to make a \ndeposit or withdrawal? (Deposit/Withdraw):")
  
         if transaction_type.lower() == 'deposit':
             the_amount = input("How much would you like to deposit? ")
@@ -25,7 +29,7 @@ while True:
             if amount.replace('.', '',1).isdigit():
                 amount = float(amount)
                 balance += amount
-                print(f'Deposit of {amount} successful.')
+                print(f'Deposit of R{amount} was successfully made.')
  
             #Log the deposit in the transaction log file
             with open("Transaction Log.txt", "a") as log_file:

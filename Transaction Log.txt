@@ -1,0 +1,7 @@
+Deposit: +12.3
+Deposit: +1111.0
+Deposit: +12435.09
+Deposit: +121212.0
+Deposit: +100.0
+Deposit: +100.0
+Deposit: +12.5
