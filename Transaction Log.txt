@@ -9,3 +9,5 @@ Deposit: +3000000000000.2
 Deposit: +10.0
 Withdrawal: -R3000000000.0
 Deposit: +R10.0
+Deposit: +R100.0
+Withdrawal: -R200.0

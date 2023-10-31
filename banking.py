@@ -45,11 +45,11 @@ while True:
                     balance -= amount
                     print(f'Withdrawal of R{amount} successful.')
  
-                #Log the withdrawal in the transaction log file
-                with open("Transaction Log.txt", "a") as log_file:
-                    log_file.write(f"Withdrawal: -R{amount}\n")
-            else:
-                print("Insufficient funds.")
+                    #Log the withdrawal in the transaction log file
+                    with open("Transaction Log.txt", "a") as log_file:
+                        log_file.write(f"Withdrawal: -R{amount}\n")
+                else:
+                    print("Insufficient funds.")
    
         else:
             print("you provided an invalid input.")
