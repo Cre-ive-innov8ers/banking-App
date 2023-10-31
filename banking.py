@@ -10,14 +10,14 @@ except FileNotFoundError:
 except ValueError:
     print("Invalid data in the file. Starting with a balance of 0.0.")
 
-print("###############################################\n \t Welcome to CI bank \n ##################################")
+print("###############################################\n \t Welcome to CI bank \n###############################################")
 name = input(f"Please enter your name:")
 #Main loop
 while True:
     response = input(f"Hi {name}, would you like to make a transaction? (Yes/No):")
     print(f'*******************************************************************\n \n \tCreative Innovators Bank \n \tCurrent balance : R{balance}\n*******************************************************************')
     
-    print(f'Current balance:{balance}')
+    print(f'Current balance: R{balance}')
     
  
     if response.lower() == 'yes':
@@ -33,7 +33,7 @@ while True:
  
             #Log the deposit in the transaction log file
             with open("Transaction Log.txt", "a") as log_file:
-                log_file.write(f"Deposit: +{amount}\n")
+                log_file.write(f"Deposit: +R{amount}\n")
  
         elif transaction_type.lower() == 'withdraw':
             the_amount = input("How much would you like to withdraw? ")
@@ -43,11 +43,11 @@ while True:
            
                 if amount <= balance:
                     balance -= amount
-                    print(f'Withdrawal of {amount} successful.')
+                    print(f'Withdrawal of R{amount} successful.')
  
                 #Log the withdrawal in the transaction log file
                 with open("Transaction Log.txt", "a") as log_file:
-                    log_file.write(f"Withdrawal: -{amount}\n")
+                    log_file.write(f"Withdrawal: -R{amount}\n")
             else:
                 print("Insufficient funds.")
    
@@ -57,7 +57,7 @@ while True:
     elif response.lower() == 'no':
         #Saving the updated balance to the file
         with open("Bank Data.txt", "w") as file:
-            file.write(str(balance))
+            file.write("R"+str(balance))
         print("Thank you for using the banking applciation.")
         break
    
